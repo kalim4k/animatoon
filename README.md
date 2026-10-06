@@ -1,6 +1,6 @@
 # Toon Family Studio
 
-Skill pour Claude qui crée des shorts verticaux d'animation 3D familiale (bébé, papa, maman) : script minuté, character sheets, storyboard, puis prompts d'animation pour **MiniMax H3 (Hailuo 3)** et **Seedance 2.5**.
+Skill pour Claude qui crée des shorts verticaux d'animation 3D familiale (bébé, papa, maman) : script minuté, character sheets, keyframes, puis prompts d'animation pour **MiniMax H3 (Hailuo 3)** et **Seedance 2.5**.
 
 ## Contenu
 
@@ -12,28 +12,19 @@ Skill pour Claude qui crée des shorts verticaux d'animation 3D familiale (béb�
 | `llms.txt` | Pointeur pour les IA qui arrivent sur le site |
 | `vercel.json` | En-têtes (Markdown en UTF-8) et raccourci `/skill` → `/skill.md` |
 | `scripts/build-zip.ps1` | Régénère le .zip après une modification de `skill.md` |
+| `scripts/sync-example.js` | Recopie les prompts de l'exemple (section 12 de `skill.md`) dans les onglets du site |
 
 ## Modifier le skill
 
 1. Modifie `skill.md`.
-2. Régénère le zip : `powershell -ExecutionPolicy Bypass -File scripts\build-zip.ps1`
-3. Commit et push : Vercel redéploie automatiquement.
+2. Recopie l'exemple sur le site : `node scripts/sync-example.js`
+3. Régénère le zip : `powershell -ExecutionPolicy Bypass -File scripts\build-zip.ps1`
+4. Commit et push : Vercel redéploie automatiquement.
 
-## Déployer
+## Déploiement
 
-### 1. GitHub
-Crée un dépôt vide sur https://github.com/new (nom conseillé : `toon-family-skill`, sans README), puis :
+- Dépôt : https://github.com/kalim4k/animatoon (branche `main`)
+- Vercel : projet importé depuis ce dépôt, preset **Other**, sans build command ni output directory. Chaque push sur `main` redéploie le site.
 
-```bash
-git remote add origin https://github.com/<ton-compte>/toon-family-skill.git
-git branch -M main
-git push -u origin main
-```
-
-### 2. Vercel
-1. https://vercel.com/new → **Import Git Repository** → choisis `toon-family-skill`.
-2. Framework Preset : **Other**. Pas de build command, pas d'output directory.
-3. **Deploy**.
-
-Le lien à donner à tes abonnés : `https://<ton-projet>.vercel.app/skill.md`
+Le lien à donner aux abonnés : `https://<ton-projet>.vercel.app/skill.md`
 (La page d'accueil affiche automatiquement la bonne phrase à copier avec ton domaine.)
