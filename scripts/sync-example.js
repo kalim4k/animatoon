@@ -1,4 +1,4 @@
-// Regenerates the example tabs of index.html (keyframes, H3, Seedance) from section 12 of skill.md,
+// Regenerates the example tabs of index.html (storyboard pages, H3, Seedance) from section 12 of skill.md,
 // so the prompts shown on the site are always identical to the skill.
 //   node scripts/sync-example.js
 const fs = require('fs');
@@ -23,15 +23,14 @@ const note = text => `      <p class="muted" style="margin-top:12px;font-size:.9
 
 const panels = {
   't-board':
-    hint('🖼️ K1 · format 9:16 · joindre : 01_LINA', true) + code('**Keyframe K1') +
-    hint('🖼️ K4 · format 9:16 · joindre : 02_MOM, K2') + code('**Keyframe K4') +
-    note("K2, K3 et K5 à K9 suivent la même structure. Chaque keyframe reçoit seulement les fiches des personnages présents dans le plan, plus la keyframe précédente pour garder le même décor et la même lumière."),
+    hint('🖼️ P1 · plans 1–3 · format 16:9 · joindre : 01_LINA, 02_MOM', true) + code('**Planche P1') +
+    hint('🖼️ P2 · plans 4–6 · format 16:9 · joindre : 01_LINA, 02_MOM, 03_DAD, P1') + code('**Planche P2') +
+    hint('🖼️ P3 · plans 7–9 · format 16:9 · joindre : 01_LINA, 02_MOM, 03_DAD, P2') + code('**Planche P3') +
+    note('Chaque planche reçoit les fiches des personnages présents et la planche précédente, pour garder le même décor, la même lumière et les mêmes looks.'),
   't-h3':
-    hint('🎬 MiniMax H3 · partie A · plans 1–5 · 7 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K1 à K5', true) + code('**Prompt vidéo — MiniMax H3, partie A') +
-    hint('🎬 MiniMax H3 · partie B · plans 6–9 · 8 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K6 à K9') + code('**Prompt vidéo — MiniMax H3, partie B') +
-    note('H3 accepte 9 images au maximum : avec une keyframe par plan, la vidéo se fait en deux parties, recollées au montage (B après A).'),
+    hint('🎬 MiniMax H3 · une seule génération · 15 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, P1, P2, P3 (6 images)', true) + code('**Prompt vidéo — MiniMax H3'),
   't-sd':
-    hint('🎬 Seedance 2.5 · 1 génération · 15 s · mode Référence (tout-en-un) · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K1 à K9 (12 images)', true) + code('**Prompt vidéo — Seedance 2.5')
+    hint('🎬 Seedance 2.5 · une seule génération · 15 s · mode Référence (tout-en-un) · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, P1, P2, P3 (6 images)', true) + code('**Prompt vidéo — Seedance 2.5')
 };
 
 for (const [id, inner] of Object.entries(panels)) {

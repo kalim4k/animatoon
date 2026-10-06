@@ -313,20 +313,19 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="step"><div class="num">ÉTAPE 1</div><h3>L'idée</h3><p>Claude te propose 6 idées de vidéos prêtes à tourner. Tu en choisis une, ou tu racontes la tienne, même en une phrase.</p><span class="tool">Claude</span></div>
       <div class="step"><div class="num">ÉTAPE 2</div><h3>Le script</h3><p>Le casting, puis 9 plans minutés : cadrage, caméra, chaîne d'actions et bruitages calés à l'instant près. Tu peux le faire refaire autant que tu veux.</p><span class="tool">Claude</span></div>
       <div class="step"><div class="num">ÉTAPE 3</div><h3>Character sheets</h3><p>Un prompt par personnage pour générer sa planche : 4 vues et 4 expressions. Sa description reste identique dans tous les prompts.</p><span class="tool">Nano Banana · ChatGPT · Seedream</span></div>
-      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>Une image par plan (keyframe), chacune en plein mouvement, générée avec les character sheets et la keyframe précédente pour garder le décor. Trois niveaux au choix.</p><span class="tool">Générateur d'images + character sheets</span></div>
-      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Le ou les prompts vidéo, avec un bloc de mouvement qui interdit les temps morts : chaque plan est relié à sa keyframe et à son timecode, avec actions enchaînées et bruitages.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
+      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>2 ou 3 planches de 3 ou 4 cases, chaque case en plein mouvement, générées avec les character sheets et la planche précédente pour garder le décor.</p><span class="tool">Générateur d'images + character sheets</span></div>
+      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Un seul prompt pour toute la vidéo de 15 s, sans montage : chaque plan est relié à sa case et à son timecode, avec actions enchaînées, bruitages et un bloc de mouvement qui interdit les temps morts.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
       <div class="step bonus"><div class="num">BONUS · FACULTATIF</div><h3>Légende & montage</h3><p>Si tu le demandes : la légende, les hashtags et 3 conseils de montage pour publier ta vidéo.</p><span class="tool">CapCut</span></div>
     </div>
 
-    <h3 style="margin-top:44px">Trois niveaux de storyboard</h3>
-    <p class="muted" style="margin-top:8px;max-width:62ch">Une seule planche pour toute la vidéo donne des cases minuscules que les modèles vidéo respectent mal. Plus chaque plan a sa propre image, plus l'animation suit le storyboard.</p>
+    <h3 style="margin-top:44px">Le storyboard : 2 ou 3 planches</h3>
+    <p class="muted" style="margin-top:8px;max-width:62ch">Une seule planche de 9 cases donne des cases minuscules que les modèles vidéo respectent mal. Avec 2 ou 3 planches, les cases sont 3 à 4 fois plus grandes, et la vidéo n'utilise que 5 ou 6 images de référence : assez peu pour que MiniMax H3 et Seedance 2.5 génèrent les 15 secondes en une seule fois.</p>
     <div class="tablewrap" style="margin-top:18px">
       <table>
-        <thead><tr><th>Niveau</th><th>Images à générer</th><th>Générations vidéo</th><th>Respect du storyboard</th></tr></thead>
+        <thead><tr><th>Choix</th><th>Planches</th><th>Taille d'une case</th><th>Images pour la vidéo</th></tr></thead>
         <tbody>
-          <tr><td>⚡ Rapide</td><td>3 planches de 3 cases</td><td>1 génération (H3 ou Seedance)</td><td>Moyen</td></tr>
-          <tr><td>🎯 Précis (recommandé)</td><td>9 keyframes, une par plan</td><td>Seedance : 1 · H3 : 2, recollées au montage</td><td>Bon</td></tr>
-          <tr><td>🔒 Contrôle total</td><td>9 keyframes, une par plan</td><td>9 courtes, une par plan, montées dans CapCut</td><td>Maximal</td></tr>
+          <tr><td>3 planches (recommandé) · 9 plans</td><td>3 cases côte à côte, format 16:9</td><td>1/3 de l'image</td><td>3 fiches + 3 planches = 6</td></tr>
+          <tr><td>2 planches · 8 plans</td><td>4 cases en grille 2 × 2, format 9:16</td><td>1/4 de l'image</td><td>3 fiches + 2 planches = 5</td></tr>
         </tbody>
       </table>
     </div>
@@ -465,7 +464,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <tr><td>Syntaxe dans le prompt</td><td><code>@image1</code>, <code>@image2</code>…</td><td><code>@Image 1</code>, <code>@Image 2</code>…</td></tr>
           <tr><td>Multi-plans en une génération</td><td>Oui, déroulé minuté</td><td>Oui, déroulé minuté</td></tr>
           <tr><td>Audio</td><td>Stéréo natif : dialogues synchronisés, bruitages</td><td>Natif : dialogues synchronisés, bruitages</td></tr>
-          <tr><td>Niveau Précis (une keyframe par plan)</td><td>2 générations : 3 fiches + 4 à 5 keyframes chacune</td><td>1 génération : 3 fiches + 9 keyframes</td></tr>
+          <tr><td>Vidéo de 15 s avec storyboard</td><td>1 génération : 3 fiches + 2 ou 3 planches (sous la limite de 9 images)</td><td>1 génération : 3 fiches + 2 ou 3 planches</td></tr>
           <tr><td>Point de vigilance</td><td>Les gestes très rapides et les petits visages se déforment : on garde l'action vive en cadrage serré</td><td>Une action trop maigre devient attente ou ralenti : on remplit chaque segment</td></tr>
           <tr><td>Idéal pour</td><td>Shorts de 15 s nerveux</td><td>Histoires de 30 s en une seule passe</td></tr>
         </tbody>
@@ -478,13 +477,13 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <span class="kicker">Exemple complet</span>
     <h2>« 3 heures de berceuse vs 1 seconde de papa 😭 »</h2>
-    <p class="lead">Format Daddy's Girl, 15 s, 9 plans, niveau Précis. Voici ce que Claude te livre à chaque étape : remarque les chaînes d'actions (→), les bruitages calés à l'instant près et chaque plan relié à sa keyframe.</p>
+    <p class="lead">Format Daddy's Girl, 15 s, 9 plans, 3 planches, une seule génération. Voici ce que Claude te livre à chaque étape : remarque les chaînes d'actions (→), les bruitages calés à l'instant près et chaque plan relié à sa case.</p>
 
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" aria-selected="true" data-tab="t-script">Script</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="t-sheet">Character sheet</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="t-board">Keyframes</button>
-      <button class="tab" role="tab" aria-selected="false" data-tab="t-h3">Prompt H3 (2 parties)</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="t-board">Storyboard (3 planches)</button>
+      <button class="tab" role="tab" aria-selected="false" data-tab="t-h3">Prompt H3</button>
       <button class="tab" role="tab" aria-selected="false" data-tab="t-sd">Prompt Seedance 2.5</button>
     </div>
 
@@ -517,75 +516,85 @@ Even soft studio lighting, identical proportions, face, hairstyle and outfit in 
     </div>
 
     <div class="tabpanel" id="t-board" role="tabpanel">
-      <p class="hint">🖼️ K1 · format 9:16 · joindre : 01_LINA</p>
-      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached image as a strict reference. Reference 1 is the character sheet of LINA. The sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout.
-Single vertical 9:16 cinematic frame — shot 1 of 9: extreme close-up from above of LINA lying in her white wooden crib with soft white bedding, in a cozy nursery at night. The instant the action starts, already in motion: her eyes have just snapped wide open, both feet kicking the blanket up into the air, the blanket mid-flight with motion blur, hair buns bouncing. LIGHTING: soft night ambiance, warm orange star nightlight mixed with cool blue moonlight. STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly. No text, no watermark.</pre></div>
-      <p class="hint" style="margin-top:22px">🖼️ K4 · format 9:16 · joindre : 02_MOM, K2</p>
-      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached images as strict references. Reference 1 is the character sheet of MOM. The sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout. Reference 2 is a previous frame of the same scene: keep the same set, props and lighting.
-Single vertical 9:16 cinematic frame — shot 4 of 9: close-up of MOM sitting by the crib in a cozy nursery at night. The instant the action starts, already in motion: her head has just nodded down and is jerking back up awake, messy hair strands flying, heavy eyelids, a forced huge smile starting, one eye twitching. LIGHTING: soft night ambiance, warm orange star nightlight mixed with cool blue moonlight. STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly. No text, no watermark.</pre></div>
-      <p class="muted" style="margin-top:12px;font-size:.92rem">K2, K3 et K5 à K9 suivent la même structure. Chaque keyframe reçoit seulement les fiches des personnages présents dans le plan, plus la keyframe précédente pour garder le même décor et la même lumière.</p>
+      <p class="hint">🖼️ P1 · plans 1–3 · format 16:9 · joindre : 01_LINA, 02_MOM</p>
+      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached images as strict references. Reference 1 is the character sheet of LINA; reference 2 is the character sheet of MOM. Each sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout.
+Create storyboard page 1 of 3: three vertical 9:16 panels side by side, separated by thin white gutters, read left to right. Every panel is a finished cinematic 3D frame (not a sketch) showing the instant its action starts, already in motion: mid-action poses, motion blur on fast-moving limbs, hair and clothes in motion. Same characters, outfits, set and lighting in every panel.
+SET: a cozy nursery at night: white wooden crib with soft white bedding, round wall clock, star-shaped warm orange nightlight, cool blue moonlight through the window, plush toys on a shelf, door open to a warmly lit hallway. LIGHTING: soft night ambiance, warm orange nightlight mixed with cool blue moonlight. STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly.
+Panel 1 (shot 1) — extreme close-up from above: LINA in her crib, her eyes just snapped wide open, both feet kicking the blanket up into the air, the blanket mid-flight with motion blur, hair buns bouncing.
+Panel 2 (shot 2) — medium side shot: LINA standing and bouncing on the mattress while gripping the rail, hair buns flying up; MOM beside the crib, patting the mattress with a strained smile.
+Panel 3 (shot 3) — insert: the round wall clock on the nursery wall, its minute hand blurred from spinning fast.
+No text, no numbers, no speech bubbles, no captions, no watermark. 16:9.</pre></div>
+      <p class="hint" style="margin-top:22px">🖼️ P2 · plans 4–6 · format 16:9 · joindre : 01_LINA, 02_MOM, 03_DAD, P1</p>
+      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached images as strict references. Reference 1 is the character sheet of LINA; reference 2 is the character sheet of MOM; reference 3 is the character sheet of DAD. Each sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout. Reference 4 is the previous storyboard page: keep the same set, lighting and character looks.
+Create storyboard page 2 of 3: three vertical 9:16 panels side by side, separated by thin white gutters, read left to right. Every panel is a finished cinematic 3D frame (not a sketch) showing the instant its action starts, already in motion: mid-action poses, motion blur on fast-moving limbs, hair and clothes in motion. Same characters, outfits, set and lighting in every panel.
+SET: a cozy nursery at night: white wooden crib with soft white bedding, round wall clock, star-shaped warm orange nightlight, cool blue moonlight through the window, plush toys on a shelf, door open to a warmly lit hallway. LIGHTING: soft night ambiance, warm orange nightlight mixed with cool blue moonlight. STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly.
+Panel 1 (shot 4) — close-up: MOM sitting by the crib, her head jerking back up awake mid-nod, messy hair strands flying, a forced huge smile starting, one eye twitching.
+Panel 2 (shot 5) — low-angle close-up: LINA flopping onto her back in the crib, blowing a cheeky raspberry, legs pedaling in the air.
+Panel 3 (shot 6) — medium shot: DAD leaning in the backlit doorway, mid-yawn, one hand scratching his beard.
+No text, no numbers, no speech bubbles, no captions, no watermark. 16:9.</pre></div>
+      <p class="hint" style="margin-top:22px">🖼️ P3 · plans 7–9 · format 16:9 · joindre : 01_LINA, 02_MOM, 03_DAD, P2</p>
+      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached images as strict references. Reference 1 is the character sheet of LINA; reference 2 is the character sheet of MOM; reference 3 is the character sheet of DAD. Each sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout. Reference 4 is the previous storyboard page: keep the same set, lighting and character looks.
+Create storyboard page 3 of 3: three vertical 9:16 panels side by side, separated by thin white gutters, read left to right. Every panel is a finished cinematic 3D frame (not a sketch) showing the instant its action starts, already in motion: mid-action poses, motion blur on fast-moving limbs, hair and clothes in motion. Same characters, outfits, set and lighting in every panel.
+SET: a cozy nursery at night: white wooden crib with soft white bedding, round wall clock, star-shaped warm orange nightlight, cool blue moonlight through the window, plush toys on a shelf, door open to a warmly lit hallway. LIGHTING: soft night ambiance, warm orange nightlight mixed with cool blue moonlight. STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly.
+Panel 1 (shot 7) — close-up: LINA flopping face-down onto the pillow, eyelids dropping shut, hair buns bouncing on impact.
+Panel 2 (shot 8) — close-up: MOM, her head jerking toward the doorway, jaw dropping, one eye twitching.
+Panel 3 (shot 9) — medium two-shot by the doorway: DAD tiptoeing away in an exaggerated step with a finger on his lips, proud; MOM with crossed arms, glaring, one foot raised mid-tap.
+No text, no numbers, no speech bubbles, no captions, no watermark. 16:9.</pre></div>
+      <p class="muted" style="margin-top:12px;font-size:.92rem">Chaque planche reçoit les fiches des personnages présents et la planche précédente, pour garder le même décor, la même lumière et les mêmes looks.</p>
     </div>
 
     <div class="tabpanel" id="t-h3" role="tabpanel">
-      <p class="hint">🎬 MiniMax H3 · partie A · plans 1–5 · 7 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K1 à K5</p>
+      <p class="hint">🎬 MiniMax H3 · une seule génération · 15 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, P1, P2, P3 (6 images)</p>
       <div class="code"><button class="copy" data-copy-code>Copier</button><pre>@image1 is the character reference for LINA: multiple views of one single character, lock her face, toddler proportions, curly hair buns and pink bunny pajamas.
 @image2 is the character reference for MOM: multiple views of one single character, lock her face, messy bun and lilac top.
 @image3 is the character reference for DAD: multiple views of one single character, lock his face, beard and grey t-shirt.
-@image4 is the keyframe of the 0-1.2s shot, @image5 of the 1.2-3s shot, @image6 of the 3-3.8s shot, @image7 of the 3.8-5.4s shot and @image8 of the 5.4-7s shot: match each keyframe's framing, poses and expressions, and keep animating through it (never freeze on it).
+@image4 is storyboard page 1: its 3 panels, left to right, are the shots at 0-1.2s, 1.2-3s and 3-3.8s.
+@image5 is storyboard page 2: its 3 panels, left to right, are the shots at 3.8-5.2s, 5.2-6.4s and 6.4-8s.
+@image6 is storyboard page 3: its 3 panels, left to right, are the shots at 8-9.6s, 9.6-11s and 11-15s.
+Follow each panel's framing, poses and expressions in its shot, keep animating through it (never freeze on a panel), and do not copy the page layout.
 
-Core idea: a hyperactive toddler girl refuses to sleep while her exhausted mom sings her a lullaby for hours. Place: a cozy nursery at night, white crib, round wall clock, warm orange star nightlight, cool blue moonlight, door open to a warm hallway. Style: high-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
+Core idea: a hyperactive toddler girl refuses to sleep while her exhausted mom sings her a lullaby for hours, but the moment her dad hums one single note she instantly falls asleep. Place: a cozy nursery at night, white crib, round wall clock, warm orange star nightlight, cool blue moonlight, door open to a warm hallway. Style: high-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
 MOTION: snappy, high-energy cartoon animation at natural real-time speed, no slow motion, no idle pauses. Every visible character keeps micro-acting at all times (blinks, eye darts, breathing, weight shifts, small gestures). Expressions snap from one to the next in a split second. Fast moves have clear anticipation, overshoot and motion blur; hair, buns and clothes bounce with follow-through. The camera is alive: punchy push-ins on reactions, tracking on movement, subtle handheld energy. Cuts land on the action.
-Vertical 9:16, fast multi-cut comedic scene: 5 shots in 7 seconds.
+Vertical 9:16, fast multi-cut comedic scene: 9 shots in 15 seconds, one single continuous generation.
 
-0-1.2s (@image4): Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet so it flies out of frame. At 0.7s: a soft blanket whoosh.
-1.2-3s (@image5): Cut to a medium side shot with handheld energy: MOM sits by the crib humming and patting the mattress in rhythm; LINA springs up to standing, grips the rail and bounces up and down on the mattress, hair buns jiggling, giggling; MOM's smile tightens on every bounce. A mattress squeak on each bounce.
-3-3.8s (@image6): Cut to an insert of the round wall clock: the minute hand spins around at high speed. Fast ticking.
-3.8-5.4s (@image7): Cut to a close-up of MOM, quick push-in: messy hair strands, her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice; loose strands bounce. At 4.8s: a cartoon "boing" on the twitch.
-5.4-7s (@image8): Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.6s: a wet "pfffbt".
+0-1.2s (@image4, panel 1): Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet so it flies out of frame. At 0.7s: a soft blanket whoosh.
+1.2-3s (@image4, panel 2): Cut to a medium side shot with handheld energy: MOM sits by the crib humming and patting the mattress in rhythm; LINA springs up to standing, grips the rail and bounces up and down on the mattress, hair buns jiggling, giggling; MOM's smile tightens on every bounce. A mattress squeak on each bounce.
+3-3.8s (@image4, panel 3): Cut to an insert of the round wall clock: the minute hand spins around at high speed. Fast ticking.
+3.8-5.2s (@image5, panel 1): Cut to a close-up of MOM, quick push-in: messy hair strands, her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice; loose strands bounce. At 4.6s: a cartoon "boing" on the twitch.
+5.2-6.4s (@image5, panel 2): Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.4s: a wet "pfffbt".
+6.4-8s (@image5, panel 3): Cut to a medium shot of DAD backlit in the doorway, slow push-in: he leans on the door frame, yawns and scratches his beard before humming one single low note: "Mmmm." At 6.6s: a yawn; at 7.3s: the hum.
+8-9.6s (@image6, panel 1): Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, fast asleep, hair buns bouncing on impact. At 9.0s: a soft "flomp" and a tiny snore.
+9.6-11s (@image6, panel 2): Cut to a close-up of MOM with a snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
+11-15s (@image6, panel 3): Cut to a medium two-shot of MOM and DAD by the doorway: DAD gives a proud shrug, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated cartoon steps; MOM crosses her arms, taps her foot fast, and her eye twitches one last time. At 11.4s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
 
 Sound: quiet nursery room tone under all the timed sound effects above. No subtitles, no on-screen text, no watermark.
 non_diegetic_music: N/A</pre></div>
-      <p class="hint" style="margin-top:22px">🎬 MiniMax H3 · partie B · plans 6–9 · 8 s · mode Référence · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K6 à K9</p>
-      <div class="code"><button class="copy" data-copy-code>Copier</button><pre>@image1 is the character reference for LINA: multiple views of one single character, lock her face, toddler proportions, curly hair buns and pink bunny pajamas.
-@image2 is the character reference for MOM: multiple views of one single character, lock her face, messy bun and lilac top.
-@image3 is the character reference for DAD: multiple views of one single character, lock his face, beard and grey t-shirt.
-@image4 is the keyframe of the 0-1.6s shot, @image5 of the 1.6-3.2s shot, @image6 of the 3.2-4.6s shot and @image7 of the 4.6-8s shot: match each keyframe's framing, poses and expressions, and keep animating through it (never freeze on it).
-
-Core idea: second half of the same scene: the moment the dad hums one single note, the hyperactive toddler instantly falls asleep and the exhausted mom is outraged. Place: the same cozy nursery at night, white crib, warm orange star nightlight, cool blue moonlight, door open to a warm hallway. Style: high-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
-MOTION: snappy, high-energy cartoon animation at natural real-time speed, no slow motion, no idle pauses. Every visible character keeps micro-acting at all times (blinks, eye darts, breathing, weight shifts, small gestures). Expressions snap from one to the next in a split second. Fast moves have clear anticipation, overshoot and motion blur; hair, buns and clothes bounce with follow-through. The camera is alive: punchy push-ins on reactions, tracking on movement, subtle handheld energy. Cuts land on the action.
-Vertical 9:16, fast multi-cut comedic scene: 4 shots in 8 seconds.
-
-0-1.6s (@image4): Medium shot of DAD backlit in the doorway, slow push-in: he leans on the door frame, yawns and scratches his beard before humming one single low note: "Mmmm." At 0.2s: a yawn; at 0.9s: the hum.
-1.6-3.2s (@image5): Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, fast asleep, hair buns bouncing on impact. At 2.6s: a soft "flomp" and a tiny snore.
-3.2-4.6s (@image6): Cut to a close-up of MOM with a snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
-4.6-8s (@image7): Cut to a medium two-shot of MOM and DAD by the doorway: DAD gives a proud shrug, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated cartoon steps; MOM crosses her arms, taps her foot fast, and her eye twitches one last time. At 5.0s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
-
-Sound: quiet nursery room tone under all the timed sound effects above. No subtitles, no on-screen text, no watermark.
-non_diegetic_music: N/A</pre></div>
-      <p class="muted" style="margin-top:12px;font-size:.92rem">H3 accepte 9 images au maximum : avec une keyframe par plan, la vidéo se fait en deux parties, recollées au montage (B après A).</p>
     </div>
 
     <div class="tabpanel" id="t-sd" role="tabpanel">
-      <p class="hint">🎬 Seedance 2.5 · 1 génération · 15 s · mode Référence (tout-en-un) · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, K1 à K9 (12 images)</p>
+      <p class="hint">🎬 Seedance 2.5 · une seule génération · 15 s · mode Référence (tout-en-un) · audio activé · joindre : 01_LINA, 02_MOM, 03_DAD, P1, P2, P3 (6 images)</p>
       <div class="code"><button class="copy" data-copy-code>Copier</button><pre>@Image 1 defines LINA only: face, toddler proportions, curly hair buns and pink bunny pajamas (multiple views of one single character).
 @Image 2 defines MOM only: face, messy bun and lilac top (multiple views of one single character).
 @Image 3 defines DAD only: face, beard and grey t-shirt (multiple views of one single character).
-@Image 4 to @Image 12 are the keyframes of the 9 shots, in order: @Image 4 = 0-1.2s, @Image 5 = 1.2-3s, @Image 6 = 3-3.8s, @Image 7 = 3.8-5.2s, @Image 8 = 5.2-6.4s, @Image 9 = 6.4-8s, @Image 10 = 8-9.6s, @Image 11 = 9.6-11s, @Image 12 = 11-15s. Match each keyframe's framing, poses and expressions in its shot, and keep animating through it: never freeze on a keyframe.
+@Image 4 is storyboard page 1: its 3 panels, left to right, are the shots at 0-1.2s, 1.2-3s and 3-3.8s.
+@Image 5 is storyboard page 2: its 3 panels, left to right, are the shots at 3.8-5.2s, 5.2-6.4s and 6.4-8s.
+@Image 6 is storyboard page 3: its 3 panels, left to right, are the shots at 8-9.6s, 9.6-11s and 11-15s.
+Follow each panel's framing, poses and expressions in its shot, keep animating through it (never freeze on a panel), and do not copy the page layout.
 The video contains exactly 3 characters: LINA, MOM and DAD.
 
 A cozy nursery at night with a white crib, a round wall clock, a warm orange star nightlight, cool blue moonlight and a door open to a warmly lit hallway. High-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
 MOTION: snappy, high-energy cartoon animation at natural real-time speed, no slow motion, no idle pauses. Every visible character keeps micro-acting at all times (blinks, eye darts, breathing, weight shifts, small gestures). Expressions snap from one to the next in a split second. Fast moves have clear anticipation, overshoot and motion blur; hair, buns and clothes bounce with follow-through. The camera is alive: punchy push-ins on reactions, tracking on movement, subtle handheld energy. Cuts land on the action.
-Vertical 9:16, fast multi-cut comedic short: 9 shots in 15 seconds.
+Vertical 9:16, fast multi-cut comedic short: 9 shots in 15 seconds, one single continuous generation.
 
-0-1.2s (@Image 4): Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet. At 0.7s: a blanket whoosh.
-1.2-3s (@Image 5): Cut to a medium side shot, handheld: MOM hums and pats the mattress in rhythm; LINA springs up, grips the rail and bounces on the mattress, hair buns jiggling; MOM's smile tightens on every bounce. A squeak on each bounce.
-3-3.8s (@Image 6): Cut to an insert of the wall clock: the minute hand spins around at high speed. Fast ticking.
-3.8-5.2s (@Image 7): Cut to a close-up of MOM, quick push-in: her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice. At 4.6s: a cartoon "boing".
-5.2-6.4s (@Image 8): Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.4s: "pfffbt".
-6.4-8s (@Image 9): Cut to a medium shot of DAD backlit in the doorway, slow push-in: he leans on the frame, yawns and scratches his beard before humming one low note: "Mmmm."
-8-9.6s (@Image 10): Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, hair buns bouncing. At 9.0s: a soft "flomp" and a tiny snore.
-9.6-11s (@Image 11): Cut to a close-up of MOM, snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
-11-15s (@Image 12): Cut to a medium two-shot by the doorway: DAD shrugs proudly, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated steps; MOM crosses her arms, taps her foot fast, her eye twitching one last time. At 11.4s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
+0-1.2s (@Image 4, panel 1): Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet. At 0.7s: a blanket whoosh.
+1.2-3s (@Image 4, panel 2): Cut to a medium side shot, handheld: MOM hums and pats the mattress in rhythm; LINA springs up, grips the rail and bounces on the mattress, hair buns jiggling; MOM's smile tightens on every bounce. A squeak on each bounce.
+3-3.8s (@Image 4, panel 3): Cut to an insert of the wall clock: the minute hand spins around at high speed. Fast ticking.
+3.8-5.2s (@Image 5, panel 1): Cut to a close-up of MOM, quick push-in: her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice. At 4.6s: a cartoon "boing".
+5.2-6.4s (@Image 5, panel 2): Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.4s: "pfffbt".
+6.4-8s (@Image 5, panel 3): Cut to a medium shot of DAD backlit in the doorway, slow push-in: he leans on the frame, yawns and scratches his beard before humming one low note: "Mmmm."
+8-9.6s (@Image 6, panel 1): Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, hair buns bouncing. At 9.0s: a soft "flomp" and a tiny snore.
+9.6-11s (@Image 6, panel 2): Cut to a close-up of MOM, snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
+11-15s (@Image 6, panel 3): Cut to a medium two-shot by the doorway: DAD shrugs proudly, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated steps; MOM crosses her arms, taps her foot fast, her eye twitching one last time. At 11.4s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
 
 Audio: quiet room tone under all the timed sound effects above. No background music. No captions, no subtitles, no watermark.</pre></div>
     </div>
@@ -629,7 +638,7 @@ Audio: quiet room tone under all the timed sound effects above. No background mu
       <details><summary>Quel générateur d'images utiliser pour les character sheets ?</summary><p>N'importe lequel qui accepte des images de référence : Nano Banana (Gemini), ChatGPT Images, Seedream (Dreamina/CapCut) ou Hailuo Image. Claude adapte les consignes à ton outil.</p></details>
       <details><summary>Je peux utiliser mes propres personnages ?</summary><p>Oui. Décris-les dès l'étape 1, ou ajuste le casting proposé avec le script (tu peux aussi envoyer une photo d'inspiration) : Claude écrit leur fiche ADN et la réutilise mot pour mot dans tous les prompts. Garde tes character sheets pour faire une série.</p></details>
       <details><summary>Pourquoi les prompts sont en anglais ?</summary><p>Les modèles d'image et de vidéo suivent mieux les consignes en anglais. Claude te parle en français, et les répliques des personnages restent dans la langue de ton choix.</p></details>
-      <details><summary>Ma vidéo est trop lente, les personnages restent plantés.</summary><p>Écris « plus dynamique » à Claude : il ajoute une micro-action par plan, raccourcit les plans, renforce la caméra et les bruitages, puis réécrit le prompt. Si le modèle mélange les plans ou ne suit pas le storyboard, monte d'un niveau : « niveau précis » (une image par plan) ou « contrôle total » (une génération par plan).</p></details>
+      <details><summary>Ma vidéo est trop lente, les personnages restent plantés.</summary><p>Écris « plus dynamique » à Claude : il ajoute une micro-action par plan, raccourcit les plans, renforce la caméra et les bruitages, puis réécrit le prompt. Si le modèle mélange les plans ou ne suit pas le storyboard, vérifie que tu utilises 3 planches (cases plus grandes) et que chaque case montre une pose bien différente de la précédente.</p></details>
       <details><summary>Ma vidéo ajoute une musique ou du texte que je ne veux pas.</summary><p>Le skill inclut un tableau de dépannage. Pour H3, la dernière ligne <code>non_diegetic_music: N/A</code> coupe la musique ; pour Seedance, « No background music ». Demande à Claude « dépannage » en décrivant le problème.</p></details>
       <details><summary>Ça marche avec une autre IA que Claude ?</summary><p>Le skill est écrit pour Claude. Une autre IA capable de lire un lien peut le suivre, mais le résultat n'est pas garanti.</p></details>
     </div>
