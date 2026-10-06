@@ -81,16 +81,19 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 
 /* phone mock */
 .phone{width:min(300px,78vw);aspect-ratio:9/16;margin:0 auto;border-radius:36px;padding:12px;background:var(--ink);box-shadow:0 30px 60px -20px rgba(35,26,46,.45);position:relative}
-.screen{height:100%;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(3,1fr);gap:3px;background:var(--ink)}
-.panel{position:relative;display:grid;place-items:center;font-size:2.2rem}
-.panel small{position:absolute;left:6px;bottom:6px;font:600 .62rem/1 Inter;color:#fff;background:rgba(0,0,0,.35);padding:3px 6px;border-radius:6px;letter-spacing:.03em}
+.screen{height:100%;border-radius:26px;overflow:hidden;display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:repeat(3,1fr);gap:3px;background:var(--ink)}
+.panel{position:relative;display:grid;place-items:center;font-size:1.8rem}
+.panel small{position:absolute;left:5px;bottom:5px;font:700 .55rem/1 Inter;color:#fff;background:rgba(0,0,0,.35);padding:3px 5px;border-radius:5px;letter-spacing:.04em}
 .p1{background:linear-gradient(160deg,#2C3E73,#F59E5B)}
 .p2{background:linear-gradient(160deg,#F7B267,#F25C54)}
 .p3{background:linear-gradient(160deg,#B9A7FF,#5A3FC0)}
 .p4{background:linear-gradient(160deg,#FFD38A,#E28A3B)}
 .p5{background:linear-gradient(160deg,#1E2B55,#5767B8)}
 .p6{background:linear-gradient(160deg,#FF8FB3,#FFB23F)}
-.rec{position:absolute;top:24px;right:24px;font:700 .65rem/1 Inter;color:#fff;background:var(--pink);padding:5px 8px;border-radius:999px;letter-spacing:.05em}
+.p7{background:linear-gradient(160deg,#243B6B,#7B8FD9)}
+.p8{background:linear-gradient(160deg,#C9B6FF,#7B5CFF)}
+.p9{background:linear-gradient(160deg,#FFB38A,#FF4F87)}
+.rec{position:absolute;z-index:2;top:24px;right:24px;font:700 .65rem/1 Inter;color:#fff;background:var(--pink);padding:5px 8px;border-radius:999px;letter-spacing:.05em}
 
 /* AI note */
 .ai-note{margin-top:8px;border:1.5px dashed var(--line);border-radius:14px;padding:12px 16px;font-size:.9rem;color:var(--muted)}
@@ -144,8 +147,16 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .dna .card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
 .dna ul{margin:10px 0 0;padding-left:18px;color:var(--muted);font-size:.94rem}
 .dna li{margin:4px 0}
+.laws{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+@media (max-width:900px){.laws{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.laws{grid-template-columns:1fr}}
+.law{display:flex;gap:12px;background:var(--surface-2);border-radius:14px;padding:14px}
+.law b{flex-shrink:0;display:grid;place-items:center;width:30px;height:30px;border-radius:10px;background:var(--pink);color:#fff;font:800 .95rem "Bricolage Grotesque"}
+.law h4{margin:0;font:600 .98rem/1.25 "Bricolage Grotesque",Inter,sans-serif}
+.law p{margin-top:4px;font-size:.87rem;color:var(--muted)}
 .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
 .chip{font-size:.84rem;padding:6px 12px;border-radius:999px;background:var(--pink-soft);font-weight:500}
+.chip.mv{background:var(--lilac-soft)}
 
 /* formats */
 .formats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
@@ -248,12 +259,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="phone">
         <span class="rec">● STORYBOARD</span>
         <div class="screen">
-          <div class="panel p1">😳<small>0–2s · HOOK</small></div>
-          <div class="panel p2">😤<small>2–5s</small></div>
-          <div class="panel p3">😅<small>5–7s</small></div>
-          <div class="panel p4">🧔🏽<small>7–9s · TWIST</small></div>
-          <div class="panel p5">😴<small>9–12s</small></div>
-          <div class="panel p6">😮<small>12–15s · CHUTE</small></div>
+          <div class="panel p1">😳<small>HOOK</small></div>
+          <div class="panel p2">🤸</div>
+          <div class="panel p3">⏰</div>
+          <div class="panel p4">😫</div>
+          <div class="panel p5">😜</div>
+          <div class="panel p6">🧔🏽<small>TWIST</small></div>
+          <div class="panel p7">😴</div>
+          <div class="panel p8">😧</div>
+          <div class="panel p9">🤫<small>CHUTE</small></div>
         </div>
       </div>
     </div>
@@ -297,10 +311,10 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <p class="lead">Chaque étape s'appuie sur la précédente. Les character sheets verrouillent les visages, le storyboard verrouille la mise en scène, et le prompt vidéo n'a plus qu'à animer.</p>
     <div class="pipeline">
       <div class="step"><div class="num">ÉTAPE 1</div><h3>L'idée</h3><p>Claude te propose 6 idées de vidéos prêtes à tourner. Tu en choisis une, ou tu racontes la tienne, même en une phrase.</p><span class="tool">Claude</span></div>
-      <div class="step"><div class="num">ÉTAPE 2</div><h3>Le script</h3><p>Le casting, puis le script minuté plan par plan : cadrage, action, expression, son. Tu peux le faire refaire autant que tu veux.</p><span class="tool">Claude</span></div>
+      <div class="step"><div class="num">ÉTAPE 2</div><h3>Le script</h3><p>Le casting, puis 9 plans minutés : cadrage, caméra, chaîne d'actions et bruitages calés à l'instant près. Tu peux le faire refaire autant que tu veux.</p><span class="tool">Claude</span></div>
       <div class="step"><div class="num">ÉTAPE 3</div><h3>Character sheets</h3><p>Un prompt par personnage pour générer sa planche : 4 vues et 4 expressions. Sa description reste identique dans tous les prompts.</p><span class="tool">Nano Banana · ChatGPT · Seedream</span></div>
-      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>Un prompt pour générer la planche de 6 cases, à lancer avec tes images de character sheets en référence.</p><span class="tool">Générateur d'images + character sheets</span></div>
-      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Le prompt vidéo complet, à lancer avec les character sheets et le storyboard : déroulé minuté, bruitages, répliques. Une génération = toute la vidéo.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
+      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>Un prompt pour générer la planche de 9 cases, chacune figée sur la pose la plus dynamique du plan, à lancer avec tes character sheets en référence.</p><span class="tool">Générateur d'images + character sheets</span></div>
+      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Le prompt vidéo complet, avec un bloc de mouvement qui interdit les temps morts : 9 plans minutés, actions enchaînées, caméra vivante, bruitages. Une génération = toute la vidéo.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
       <div class="step bonus"><div class="num">BONUS · FACULTATIF</div><h3>Légende & montage</h3><p>Si tu le demandes : la légende, les hashtags et 3 conseils de montage pour publier ta vidéo.</p><span class="tool">CapCut</span></div>
     </div>
   </div>
@@ -310,29 +324,44 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <span class="kicker">ADN du format</span>
     <h2>Ce que 16 vidéos virales ont en commun</h2>
-    <p class="lead">Le skill est construit à partir de l'analyse plan par plan de 16 shorts du genre. Ces règles sont intégrées dans chaque prompt.</p>
+    <p class="lead">Le skill est construit sur l'analyse de 16 shorts du genre, examinés à 4 et 12 images par seconde, avec la mesure automatique des coupes, des mouvements de caméra et du mouvement des personnages. Résultat : ces vidéos sont beaucoup plus rapides qu'elles n'en ont l'air.</p>
     <div class="stats">
-      <div class="stat"><b>16/16</b><span>en 9:16 vertical, style 3D de film d'animation</span></div>
-      <div class="stat"><b>~15 s</b><span>durée typique (une seule génération vidéo)</span></div>
-      <div class="stat"><b>~2 s</b><span>par plan : un nouveau plan toutes les 2 secondes environ</span></div>
-      <div class="stat"><b>13/16</b><span>avec un tout-petit comme star de l'histoire</span></div>
+      <div class="stat"><b>≈ 9</b><span>plans pour 15 secondes de vidéo</span></div>
+      <div class="stat"><b>1,25 s</b><span>durée médiane d'un plan ; 40 % des plans durent moins d'une seconde</span></div>
+      <div class="stat"><b>8 / 10</b><span>plans avec une caméra en mouvement (zoom, travelling, bougé)</span></div>
+      <div class="stat"><b>0,3–0,5 s</b><span>entre deux micro-actions ou changements d'expression</span></div>
     </div>
 
     <div class="timeline">
-      <h3>La structure en 5 temps (15 s)</h3>
-      <div class="tl-bar" role="img" aria-label="Hook 0 à 2 s, situation 2 à 5 s, escalade 5 à 9 s, retournement 9 à 12 s, chute 12 à 15 s">
-        <div style="flex:2;background:#FF4F87">Hook</div>
-        <div style="flex:3;background:#FF7E6B">Situation</div>
+      <h3>La structure en 5 temps (15 s, 9 plans)</h3>
+      <div class="tl-bar" role="img" aria-label="Hook 0 à 1,5 s, situation 1,5 à 4 s, escalade 4 à 8 s, retournement 8 à 11 s, chute 11 à 15 s">
+        <div style="flex:1.5;background:#FF4F87">Hook</div>
+        <div style="flex:2.5;background:#FF7E6B">Situation</div>
         <div style="flex:4;background:#FFB23F">Escalade</div>
         <div style="flex:3;background:#7B5CFF">Retournement</div>
-        <div style="flex:3;background:#13A497">Chute</div>
+        <div style="flex:4;background:#13A497">Chute</div>
       </div>
       <div class="tl-legend">
-        <div><b>0–2 s · Hook</b>Une réaction forte qui arrête le scroll.</div>
-        <div><b>2–5 s · Situation</b>Qui, où, quel enjeu.</div>
-        <div><b>5–9 s · Escalade</b>Ça empire, le contraste se prépare.</div>
-        <div><b>9–12 s · Retournement</b>L'élément qui change tout.</div>
-        <div><b>12–15 s · Chute</b>La punchline et une dernière réaction figée.</div>
+        <div><b>0–1,5 s · Hook</b>Une action ou une réaction qui arrête le scroll, en pleine action.</div>
+        <div><b>1,5–4 s · Situation</b>Qui, où, quel enjeu.</div>
+        <div><b>4–8 s · Escalade</b>Ça empire : règle de trois, gag continu.</div>
+        <div><b>8–11 s · Retournement</b>L'élément qui change tout.</div>
+        <div><b>11–15 s · Chute</b>La punchline et une dernière réaction forte.</div>
+      </div>
+    </div>
+
+    <div class="timeline">
+      <h3>Les 9 lois du mouvement, appliquées à chaque plan</h3>
+      <div class="laws">
+        <div class="law"><b>1</b><div><h4>Personne ne fige</h4><p>Clignements, regards, respiration, poids qui bascule. Celui qui n'agit pas réagit.</p></div></div>
+        <div class="law"><b>2</b><div><h4>Une chaîne d'actions par plan</h4><p>2 à 4 actions enchaînées : « sourit → aperçoit → sursaute → main sur la bouche ».</p></div></div>
+        <div class="law"><b>3</b><div><h4>Expressions qui claquent</h4><p>Le visage bascule en une fraction de seconde, tient, puis rebascule.</p></div></div>
+        <div class="law"><b>4</b><div><h4>Le corps entier joue</h4><p>Sursaut, saut, tour sur soi, évanouissement, bras en « ta-da ».</p></div></div>
+        <div class="law"><b>5</b><div><h4>Physique cartoon</h4><p>Anticipation, rebond, poids visible, flou de mouvement sur les gestes rapides.</p></div></div>
+        <div class="law"><b>6</b><div><h4>Tout rebondit</h4><p>Couettes, chignons, vêtements continuent de bouger après l'arrêt.</p></div></div>
+        <div class="law"><b>7</b><div><h4>Caméra vivante</h4><p>Zooms francs sur les réactions, travelling à hauteur de bébé, léger bougé.</p></div></div>
+        <div class="law"><b>8</b><div><h4>Transitions qui claquent</h4><p>Whip pan qui suit un objet lancé, personnage qui fonce dans l'objectif, coupe sur l'impact.</p></div></div>
+        <div class="law"><b>9</b><div><h4>Un seul ralenti</h4><p>Au maximum un moment suspendu, pour faire ressortir la chute.</p></div></div>
       </div>
     </div>
 
@@ -343,23 +372,22 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <li>3D de film d'animation : formes rondes, yeux immenses et brillants, peau douce, joues roses</li>
           <li>Bébé à la tête surdimensionnée (un tiers du corps), joues rebondies</li>
           <li>Lumière chaude golden hour, ou nuit bleue avec veilleuse orange</li>
-          <li>Intérieurs cosy, faible profondeur de champ</li>
         </ul>
       </div>
       <div class="card">
-        <h3>🎥 La caméra</h3>
+        <h3>🎭 Les gags</h3>
         <ul>
-          <li>30 à 40 % de gros plans visage : la réaction est la star</li>
-          <li>Inserts en macro sur l'objet du gag (cookie, tondeuse, rouge à lèvres)</li>
-          <li>Contre-plongées à hauteur de bébé</li>
-          <li>Un seul mouvement simple par plan : push-in, plan fixe</li>
+          <li>Règle de trois : trois refus de plus en plus marqués</li>
+          <li>Fausse piste : les bras ouverts… pour quelqu'un d'autre</li>
+          <li>Insert sensoriel : l'oreille qui entend la porte, et tout bascule</li>
+          <li>Double retournement dans le dernier plan</li>
         </ul>
       </div>
       <div class="card">
         <h3>🔊 Le son</h3>
         <ul>
           <li>Compréhensible sans le son : zéro à trois mots maximum</li>
-          <li>Bruitages natifs : rire, « hmph ! », bisou, pas pressés</li>
+          <li>Un bruitage minuté sur chaque geste fort : boing, whoosh, flomp, gloussement</li>
           <li>Musique tendance ajoutée au montage, pas dans la génération</li>
         </ul>
       </div>
@@ -375,6 +403,18 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
         <span class="chip">😆 Fou rire yeux plissés</span>
         <span class="chip">😑 Incrédulité, l'œil qui tressaute</span>
         <span class="chip">😁 Fierté espiègle</span>
+      </div>
+      <h3 style="margin-top:22px">Le lexique du mouvement</h3>
+      <div class="chips">
+        <span class="chip mv">Snap d'expression</span>
+        <span class="chip mv">Anticipation</span>
+        <span class="chip mv">Overshoot &amp; rebond</span>
+        <span class="chip mv">Flou de mouvement</span>
+        <span class="chip mv">Whip pan</span>
+        <span class="chip mv">Snap zoom</span>
+        <span class="chip mv">Travelling à hauteur de bébé</span>
+        <span class="chip mv">Coupe sur l'action</span>
+        <span class="chip mv">Points de contact</span>
       </div>
     </div>
   </div>
@@ -413,6 +453,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
           <tr><td>Multi-plans en une génération</td><td>Oui, déroulé minuté</td><td>Oui, déroulé minuté</td></tr>
           <tr><td>Audio</td><td>Stéréo natif : dialogues synchronisés, bruitages</td><td>Natif : dialogues synchronisés, bruitages</td></tr>
           <tr><td>Storyboard conseillé</td><td>Planche unique (économise les références)</td><td>Planche + keyframes HD en option</td></tr>
+          <tr><td>Point de vigilance</td><td>Les gestes très rapides et les petits visages se déforment : on garde l'action vive en cadrage serré</td><td>Une action trop maigre devient attente ou ralenti : on remplit chaque segment</td></tr>
           <tr><td>Idéal pour</td><td>Shorts de 15 s nerveux</td><td>Histoires de 30 s en une seule passe</td></tr>
         </tbody>
       </table>
@@ -424,7 +465,7 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
   <div class="wrap">
     <span class="kicker">Exemple complet</span>
     <h2>« 3 heures de berceuse vs 1 seconde de papa 😭 »</h2>
-    <p class="lead">Format Daddy's Girl, 15 s, 6 plans. Voici ce que Claude te livre à chaque étape.</p>
+    <p class="lead">Format Daddy's Girl, 15 s, 9 plans. Voici ce que Claude te livre à chaque étape : remarque les chaînes d'actions (→) et les bruitages calés à l'instant près.</p>
 
     <div class="tabs" role="tablist">
       <button class="tab" role="tab" aria-selected="true" data-tab="t-script">Script</button>
@@ -437,14 +478,17 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
     <div class="tabpanel script" id="t-script" role="tabpanel">
       <div class="tablewrap" style="margin-top:0">
         <table>
-          <thead><tr><th>#</th><th>Timecode</th><th>Cadrage</th><th>Action & expression</th><th>Son</th></tr></thead>
+          <thead><tr><th>#</th><th>Timecode</th><th>Cadrage & caméra</th><th>Chaîne d'actions</th><th>Son minuté</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td>0–2 s · Hook</td><td>Très gros plan, plongée</td><td>Lina dans son lit, totalement réveillée, regard plat</td><td>Maman fredonne hors champ</td></tr>
-            <tr><td>2</td><td>2–5 s</td><td>Plan moyen latéral, push-in</td><td>Maman chante et tapote ; Lina s'assoit, bras croisés, moue</td><td>Berceuse douce</td></tr>
-            <tr><td>3</td><td>5–7 s</td><td>Gros plan maman</td><td>Sourire forcé épuisé, un œil qui tressaute</td><td>Fredonnement fatigué</td></tr>
-            <tr><td>4</td><td>7–9,5 s · Twist</td><td>Plan moyen, contre-jour</td><td>Papa à la porte fredonne une seule note grave</td><td>« Mmmm… »</td></tr>
-            <tr><td>5</td><td>9,5–12 s</td><td>Gros plan Lina, push-in</td><td>Ses paupières tombent net, elle s'endort</td><td>Mini ronflement</td></tr>
-            <tr><td>6</td><td>12–15 s · Chute</td><td>Plan à deux</td><td>Maman bouche bée se tourne vers papa ; papa, fier, doigt sur la bouche</td><td>« Chut. »</td></tr>
+            <tr><td>1</td><td>0–1,2 s · Hook</td><td>Très gros plan plongée, push-in rapide</td><td>Les yeux de Lina s'ouvrent d'un coup → filent à gauche, à droite → elle envoie valser la couverture d'un coup de pieds</td><td>0,7 s : « fouf »</td></tr>
+            <tr><td>2</td><td>1,2–3 s</td><td>Plan moyen latéral, caméra épaule</td><td>Maman fredonne et tapote ; Lina bondit debout → rebondit sur le matelas, couettes qui sautent ; le sourire de maman se crispe</td><td>Grincement à chaque rebond</td></tr>
+            <tr><td>3</td><td>3–3,8 s</td><td>Insert horloge</td><td>L'aiguille des minutes tourne à toute vitesse</td><td>Tic-tac accéléré</td></tr>
+            <tr><td>4</td><td>3,8–5,2 s</td><td>Gros plan maman, push-in rapide</td><td>La tête tombe → se redresse en sursaut → sourire forcé, l'œil tressaute deux fois</td><td>4,6 s : « boing »</td></tr>
+            <tr><td>5</td><td>5,2–6,4 s</td><td>Gros plan Lina, contre-plongée</td><td>« Pfffbt » moqueur → se laisse tomber sur le dos → pédale des jambes en riant</td><td>5,4 s : « pfffbt »</td></tr>
+            <tr><td>6</td><td>6,4–8 s · Twist</td><td>Plan moyen papa, contre-jour, push-in lent</td><td>S'appuie à la porte → bâille, se gratte la barbe → fredonne une seule note grave</td><td>7,3 s : « Mmmm… »</td></tr>
+            <tr><td>7</td><td>8–9,6 s</td><td>Gros plan Lina</td><td>Se fige en plein coup de pied → paupières qui tombent net → s'écroule sur l'oreiller, couettes qui rebondissent</td><td>9 s : « flomp », ronflement</td></tr>
+            <tr><td>8</td><td>9,6–11 s</td><td>Gros plan maman, snap zoom</td><td>Tourne la tête vers papa par à-coups → mâchoire qui tombe → l'œil tressaute</td><td>Craquement de cou</td></tr>
+            <tr><td>9</td><td>11–15 s · Chute</td><td>Plan à deux</td><td>Papa, fier, doigt sur la bouche → s'époussette l'épaule → repart sur la pointe des pieds ; maman bras croisés, tape du pied, l'œil tressaute une dernière fois</td><td>11,4 s : « Chut. »</td></tr>
           </tbody>
         </table>
       </div>
@@ -460,20 +504,23 @@ Even soft studio lighting, identical proportions, face, hairstyle and outfit in 
     </div>
 
     <div class="tabpanel" id="t-board" role="tabpanel">
-      <p class="hint">🖼️ Générateur d'images · format 4:5 · joindre dans l'ordre : 01_LINA, 02_MOM, 03_DAD</p>
+      <p class="hint">🖼️ Générateur d'images · format 9:16 · joindre dans l'ordre : 01_LINA, 02_MOM, 03_DAD</p>
       <div class="code"><button class="copy" data-copy-code>Copier</button><pre>Use the attached images as strict references. Reference 1 is the character sheet of LINA; reference 2 is the character sheet of MOM; reference 3 is the character sheet of DAD. Each sheet shows multiple views of ONE single character: keep exactly the same face, proportions, hair and outfit, and ignore the sheet layout.
 
-Create a 6-panel storyboard grid: 3 columns x 2 rows of vertical 9:16 panels separated by thin white gutters, read left to right, then top to bottom. Every panel is a finished cinematic 3D frame (not a sketch) with the same characters, outfits, set and lighting.
-SET: a cozy nursery at night: white wooden crib with soft white bedding, star-shaped warm orange nightlight, cool blue moonlight through the window, plush toys on a shelf, door open to a warmly lit hallway.
+Create a 9-panel storyboard grid: 3 columns x 3 rows of vertical 9:16 panels separated by thin white gutters, read left to right, then top to bottom. Every panel is a finished cinematic 3D frame (not a sketch) with the same characters, outfits, set and lighting. Each panel freezes the most dynamic instant of its shot: mid-action poses, motion blur on fast-moving limbs, hair and clothes in motion, objects mid-flight.
+SET: a cozy nursery at night: white wooden crib with soft white bedding, round wall clock, star-shaped warm orange nightlight, cool blue moonlight through the window, plush toys on a shelf, door open to a warmly lit hallway.
 LIGHTING: soft night ambiance, warm orange nightlight mixed with cool blue moonlight.
 STYLE: high-end stylized 3D animated feature film look, big glossy expressive eyes, subsurface skin, warm cinematic lighting, shallow depth of field, family-friendly.
 
-Panel 1 — extreme close-up from above: LINA lying in her crib, perfectly wide awake, flat unimpressed stare upward.
-Panel 2 — medium side shot: MOM sits beside the crib, patting the mattress and singing softly; LINA sits up with arms crossed and a grumpy pout.
-Panel 3 — close-up: MOM with an exhausted forced smile, one eye twitching.
-Panel 4 — medium shot: DAD leaning in the doorway, backlit by warm hallway light, humming with closed lips.
-Panel 5 — close-up: LINA fast asleep on her pillow, eyes shut, peaceful.
-Panel 6 — medium two-shot near the doorway: MOM turns to DAD with her jaw dropped in disbelief; DAD shrugs proudly with a finger to his lips.
+Panel 1 — extreme close-up from above: LINA in her crib, eyes popped wide open, both feet kicking the blanket up into the air, blanket mid-flight with motion blur.
+Panel 2 — medium side shot: LINA standing and bouncing on the mattress while gripping the rail, hair buns flying up; MOM beside the crib patting the mattress with a strained smile.
+Panel 3 — insert: the round wall clock, minute hand blurred from spinning fast.
+Panel 4 — close-up: MOM with messy hair, startled awake mid-nod, forced huge smile, one eye twitching.
+Panel 5 — low-angle close-up: LINA on her back blowing a cheeky raspberry, legs pedaling in the air.
+Panel 6 — medium shot: DAD leaning in the backlit doorway, mid-yawn, one hand scratching his beard.
+Panel 7 — close-up: LINA flopping face-down onto the pillow, eyes shut, hair buns bouncing.
+Panel 8 — close-up: MOM, head jerked toward DAD, jaw dropped, one eye twitching.
+Panel 9 — medium two-shot by the doorway: DAD tiptoeing away in an exaggerated step with a finger on his lips, proud; MOM with crossed arms, glaring, one foot raised mid-tap.
 
 No text, no numbers, no speech bubbles, no captions, no watermark.</pre></div>
     </div>
@@ -483,18 +530,23 @@ No text, no numbers, no speech bubbles, no captions, no watermark.</pre></div>
       <div class="code"><button class="copy" data-copy-code>Copier</button><pre>@image1 is the character reference for LINA: multiple views of one single character, lock her face, toddler proportions, curly hair buns and pink bunny pajamas.
 @image2 is the character reference for MOM: multiple views of one single character, lock her face, messy bun and lilac top.
 @image3 is the character reference for DAD: multiple views of one single character, lock his face, beard and grey t-shirt.
-@image4 is the storyboard: follow its 6 panels in order (left to right, top to bottom) for framing, staging and action.
+@image4 is the storyboard: follow its 9 panels in order (left to right, top to bottom) for framing, staging and key poses.
 
-Core idea: a toddler girl refuses to fall asleep while her exhausted mom sings her a lullaby, but the moment her dad hums one single note she instantly falls asleep. Place: a cozy nursery at night, white crib, warm orange star nightlight, cool blue moonlight, door open to a warm hallway. Style: high-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field. Vertical 9:16, multi-cut comedic scene with snappy editing.
+Core idea: a hyperactive toddler girl refuses to sleep while her exhausted mom sings her a lullaby for hours, but the moment her dad hums one single note she instantly falls asleep. Place: a cozy nursery at night, white crib, round wall clock, warm orange star nightlight, cool blue moonlight, door open to a warm hallway. Style: high-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
+MOTION: snappy, high-energy cartoon animation at natural real-time speed, no slow motion, no idle pauses. Every visible character keeps micro-acting at all times (blinks, eye darts, breathing, weight shifts, small gestures). Expressions snap from one to the next in a split second. Fast moves have clear anticipation, overshoot and motion blur; hair, buns and clothes bounce with follow-through. The camera is alive: punchy push-ins on reactions, tracking on movement, subtle handheld energy. Cuts land on the action.
+Vertical 9:16, fast multi-cut comedic scene: 9 shots in 15 seconds.
 
-0-2s: Extreme close-up from above of LINA lying in her crib, perfectly wide awake, staring flatly upward, nightlight glow on her chubby cheeks.
-2-5s: Cut to a medium side shot with a slow push-in: MOM sits beside the crib, gently patting the mattress and humming a lullaby; LINA sits up, crosses her chubby arms and pouts, unimpressed.
-5-7s: Cut to a close-up of MOM: exhausted forced smile, one eye twitching, she keeps humming.
-7-9.5s: Cut to a medium shot of DAD leaning in the doorway, backlit by the warm hallway light; he hums one single low soft note: "Mmmm."
-9.5-12s: Cut to a close-up of LINA with a slow push-in: her eyelids drop instantly and she flops back onto the pillow, fast asleep, with a tiny cute snore.
-12-15s: Cut to a medium two-shot of MOM and DAD near the doorway: MOM slowly turns her head toward DAD, jaw dropped in deadpan disbelief; DAD gives a proud little shrug, puts a finger to his lips and whispers: "Shhh."
+0-1.2s: Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet so it flies out of frame. At 0.7s: a soft blanket whoosh.
+1.2-3s: Cut to a medium side shot with handheld energy: MOM sits by the crib humming and patting the mattress in rhythm; LINA springs up to standing, grips the rail and bounces up and down on the mattress, hair buns jiggling, giggling; MOM's smile tightens on every bounce. A mattress squeak on each bounce.
+3-3.8s: Cut to an insert of the round wall clock: the minute hand spins around at high speed. Fast ticking.
+3.8-5.2s: Cut to a close-up of MOM, quick push-in: messy hair strands, her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice; loose strands bounce. At 4.6s: a cartoon "boing" on the twitch.
+5.2-6.4s: Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.4s: a wet "pfffbt".
+6.4-8s: Cut to a medium shot of DAD backlit in the doorway, slow push-in: he leans on the door frame, yawns and scratches his beard before humming one single low note: "Mmmm." At 6.6s: a yawn; at 7.3s: the hum.
+8-9.6s: Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, fast asleep, hair buns bouncing on impact. At 9.0s: a soft "flomp" and a tiny snore.
+9.6-11s: Cut to a close-up of MOM with a snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
+11-15s: Cut to a medium two-shot of MOM and DAD by the doorway: DAD gives a proud shrug, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated cartoon steps; MOM crosses her arms, taps her foot fast, and her eye twitches one last time. At 11.4s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
 
-Sound: quiet nursery room tone, soft humming, fabric rustle, a tiny toddler snore, DAD's whisper. No subtitles, no on-screen text, no watermark.
+Sound: quiet nursery room tone under all the timed sound effects above. No subtitles, no on-screen text, no watermark.
 non_diegetic_music: N/A</pre></div>
     </div>
 
@@ -503,19 +555,24 @@ non_diegetic_music: N/A</pre></div>
       <div class="code"><button class="copy" data-copy-code>Copier</button><pre>@Image 1 defines LINA only: face, toddler proportions, curly hair buns and pink bunny pajamas (multiple views of one single character).
 @Image 2 defines MOM only: face, messy bun and lilac top (multiple views of one single character).
 @Image 3 defines DAD only: face, beard and grey t-shirt (multiple views of one single character).
-@Image 4 is the storyboard: follow its 6 panels in order for framing, staging and action. Do not copy the grid layout.
+@Image 4 is the storyboard: follow its 9 panels in order for framing, staging and key poses. Do not copy the grid layout.
 The video contains exactly 3 characters: LINA, MOM and DAD.
 
-A cozy nursery at night with a white crib, a warm orange star nightlight, cool blue moonlight and a door open to a warmly lit hallway. High-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field. Vertical 9:16, multi-cut comedic short with snappy editing.
+A cozy nursery at night with a white crib, a round wall clock, a warm orange star nightlight, cool blue moonlight and a door open to a warmly lit hallway. High-end stylized 3D animated feature film look, exaggerated readable facial expressions, big glossy eyes, subsurface skin, shallow depth of field.
+MOTION: snappy, high-energy cartoon animation at natural real-time speed, no slow motion, no idle pauses. Every visible character keeps micro-acting at all times (blinks, eye darts, breathing, weight shifts, small gestures). Expressions snap from one to the next in a split second. Fast moves have clear anticipation, overshoot and motion blur; hair, buns and clothes bounce with follow-through. The camera is alive: punchy push-ins on reactions, tracking on movement, subtle handheld energy. Cuts land on the action.
+Vertical 9:16, fast multi-cut comedic short: 9 shots in 15 seconds.
 
-0-2s: Extreme close-up from above of LINA lying in her crib, perfectly wide awake, staring flatly upward.
-2-5s: Cut to a medium side shot, slow push-in: MOM sits by the crib humming a lullaby and patting the mattress; LINA sits up, crosses her arms and pouts.
-5-7s: Cut to a close-up of MOM: exhausted forced smile, one eye twitching.
-7-9.5s: Cut to a medium shot of DAD leaning in the backlit doorway, humming one single low note: "Mmmm."
-9.5-12s: Cut to a close-up of LINA: her eyelids drop instantly, she flops onto the pillow fast asleep with a tiny snore.
-12-15s: Cut to a medium two-shot: MOM slowly turns to DAD, jaw dropped; DAD shrugs proudly, finger to his lips, and whispers: "Shhh."
+0-1.2s: Extreme close-up from above of LINA in her crib, quick push-in: her eyes snap wide open, dart left and right, and she kicks the blanket off with both feet. At 0.7s: a blanket whoosh.
+1.2-3s: Cut to a medium side shot, handheld: MOM hums and pats the mattress in rhythm; LINA springs up, grips the rail and bounces on the mattress, hair buns jiggling; MOM's smile tightens on every bounce. A squeak on each bounce.
+3-3.8s: Cut to an insert of the wall clock: the minute hand spins around at high speed. Fast ticking.
+3.8-5.2s: Cut to a close-up of MOM, quick push-in: her head nods down, jerks back up awake and she forces a huge smile while one eye twitches twice. At 4.6s: a cartoon "boing".
+5.2-6.4s: Cut to a low-angle close-up of LINA: she blows a cheeky raspberry toward MOM, flops onto her back and pedals her legs in the air, laughing. At 5.4s: "pfffbt".
+6.4-8s: Cut to a medium shot of DAD backlit in the doorway, slow push-in: he leans on the frame, yawns and scratches his beard before humming one low note: "Mmmm."
+8-9.6s: Cut to a close-up of LINA: she freezes mid-kick, her eyelids drop instantly and she flops face-down onto the pillow, hair buns bouncing. At 9.0s: a soft "flomp" and a tiny snore.
+9.6-11s: Cut to a close-up of MOM, snap zoom: her head turns toward DAD in small jerky steps, jaw dropping, one eye twitching. A cartoon neck creak.
+11-15s: Cut to a medium two-shot by the doorway: DAD shrugs proudly, puts a finger to his lips, dusts off his shoulder and tiptoes away in exaggerated steps; MOM crosses her arms, taps her foot fast, her eye twitching one last time. At 11.4s: DAD whispers: "Shhh." A creaky floorboard on each tiptoe.
 
-Audio: quiet room tone, soft humming, fabric rustle, tiny toddler snore, DAD's whisper. No background music. No captions, no subtitles, no watermark.</pre></div>
+Audio: quiet room tone under all the timed sound effects above. No background music. No captions, no subtitles, no watermark.</pre></div>
     </div>
   </div>
 </section>
@@ -557,6 +614,7 @@ Audio: quiet room tone, soft humming, fabric rustle, tiny toddler snore, DAD's w
       <details><summary>Quel générateur d'images utiliser pour les character sheets ?</summary><p>N'importe lequel qui accepte des images de référence : Nano Banana (Gemini), ChatGPT Images, Seedream (Dreamina/CapCut) ou Hailuo Image. Claude adapte les consignes à ton outil.</p></details>
       <details><summary>Je peux utiliser mes propres personnages ?</summary><p>Oui. Décris-les dès l'étape 1, ou ajuste le casting proposé avec le script (tu peux aussi envoyer une photo d'inspiration) : Claude écrit leur fiche ADN et la réutilise mot pour mot dans tous les prompts. Garde tes character sheets pour faire une série.</p></details>
       <details><summary>Pourquoi les prompts sont en anglais ?</summary><p>Les modèles d'image et de vidéo suivent mieux les consignes en anglais. Claude te parle en français, et les répliques des personnages restent dans la langue de ton choix.</p></details>
+      <details><summary>Ma vidéo est trop lente, les personnages restent plantés.</summary><p>Écris « plus dynamique » à Claude : il ajoute une micro-action par plan, raccourcit les plans, renforce la caméra et les bruitages, puis réécrit le prompt. Si le modèle mélange les plans, demande « mode turbo » : la vidéo est découpée en deux générations de 7–8 s, plus faciles à respecter.</p></details>
       <details><summary>Ma vidéo ajoute une musique ou du texte que je ne veux pas.</summary><p>Le skill inclut un tableau de dépannage. Pour H3, la dernière ligne <code>non_diegetic_music: N/A</code> coupe la musique ; pour Seedance, « No background music ». Demande à Claude « dépannage » en décrivant le problème.</p></details>
       <details><summary>Ça marche avec une autre IA que Claude ?</summary><p>Le skill est écrit pour Claude. Une autre IA capable de lire un lien peut le suivre, mais le résultat n'est pas garanti.</p></details>
     </div>
