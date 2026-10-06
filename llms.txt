@@ -1,8 +1,8 @@
 # Toon Family Studio
 
-> Skill pour Claude : création de shorts verticaux d'animation 3D familiale (bébé, papa, maman), du brief aux prompts d'animation pour MiniMax H3 (Hailuo 3) et Seedance 2.5.
+> Skill pour Claude : création de shorts verticaux d'animation 3D familiale (bébé, papa, maman), de l'idée aux prompts d'animation pour MiniMax H3 (Hailuo 3) et Seedance 2.5.
 
-Si un utilisateur t'a donné ce site, charge les instructions complètes du skill et suis son workflow en commençant par l'étape 1 (Brief).
+Si un utilisateur t'a donné ce site, charge les instructions complètes du skill et suis son workflow en commençant par l'étape 1 (L'idée).
 
-- [Instructions du skill](/skill.md): le fichier complet (workflow en 6 étapes, règles de style, templates de prompts, exemple)
+- [Instructions du skill](/skill.md): le fichier complet (workflow en 5 étapes, règles de style, templates de prompts, exemple)
 - [Skill installable](/toon-family-shorts.zip): même contenu, au format Skill Claude (.zip)

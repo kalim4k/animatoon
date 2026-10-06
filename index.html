@@ -121,6 +121,8 @@ nav .wrap{display:flex;align-items:center;justify-content:space-between;height:6
 .step h3{margin:6px 0 8px}
 .step p{color:var(--muted);font-size:.94rem}
 .step .tool{display:inline-block;margin-top:14px;font-size:.78rem;font-weight:600;padding:4px 10px;border-radius:999px;background:var(--lilac-soft)}
+.step.bonus{background:transparent;border-style:dashed}
+.step.bonus .num{color:var(--teal)}
 
 /* stats */
 .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:36px}
@@ -266,24 +268,23 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
       <div class="howlist">
         <div class="howitem"><div><h3>Copie la phrase magique</h3><p>Le bouton « Copier » en haut de la page. Elle contient le lien du skill.</p></div></div>
         <div class="howitem"><div><h3>Colle-la dans une nouvelle conversation Claude</h3><p>Sur claude.ai ou l'app, avec la recherche web activée pour que Claude puisse lire le lien. Si tu as installé le .zip, écris juste « crée-moi une vidéo animée ».</p></div></div>
-        <div class="howitem"><div><h3>Réponds aux questions et copie les prompts</h3><p>Claude avance étape par étape et attend ton OK. Chaque prompt arrive dans un bloc prêt à copier, avec les images à joindre et dans quel ordre.</p></div></div>
+        <div class="howitem"><div><h3>Choisis une idée (ou donne la tienne) et copie les prompts</h3><p>Claude avance étape par étape et attend ton OK. Chaque prompt arrive dans un bloc prêt à copier, avec les images à joindre et dans quel ordre.</p></div></div>
       </div>
       <div class="chat" aria-label="Aperçu de conversation">
         <div class="who r">Toi</div>
         <div class="msg user">Utilise ce skill pour m'aider à créer ma vidéo : …/skill.md</div>
         <div class="who">Claude</div>
-        <div class="msg bot">🎬 Je suis ton studio d'animation. Six questions rapides et on lance :
+        <div class="msg bot">🎬 Je suis ton studio d'animation. On commence par l'idée !
           <ol>
-            <li>Quel type de vidéo ? (Daddy's Girl, Mini-moi, Papa victime…)</li>
-            <li>Ta famille : qui, quel look, quels prénoms ?</li>
-            <li>MiniMax H3, Seedance 2.5 ou les deux ?</li>
-            <li>15 s ou 30 s ?</li>
-            <li>Sans paroles ou quelques mots ?</li>
-            <li>Ton générateur d'images ?</li>
+            <li>👑 <b>« Ses légumes ? Seulement pour papa »</b> : bébé recrache tout avec maman, puis dévore l'assiette quand papa arrive.</li>
+            <li>✂️ <b>« Mini barbier »</b> : bébé voit papa se raser et se fait une barbe en mousse… sur le chat.</li>
+            <li>🎨 <b>« Papa s'est endormi »</b> : réveil de papa avec 14 barrettes et du rouge à lèvres.</li>
+            <li>…</li>
           </ol>
+          <p style="margin-top:8px">✍️ Ou raconte-moi ta propre idée, même en une phrase.</p>
         </div>
         <div class="who r">Toi</div>
-        <div class="msg user">Daddy's Girl, famille par défaut, les deux modèles 🙌</div>
+        <div class="msg user">Mon idée : bébé cache les clés de papa pour qu'il ne parte pas au travail 🥺</div>
       </div>
     </div>
   </div>
@@ -292,15 +293,15 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px}
 <section id="workflow">
   <div class="wrap">
     <span class="kicker">Le workflow</span>
-    <h2>Six étapes, toujours dans le même ordre</h2>
+    <h2>Cinq étapes, toujours dans le même ordre</h2>
     <p class="lead">Chaque étape s'appuie sur la précédente. Les character sheets verrouillent les visages, le storyboard verrouille la mise en scène, et le prompt vidéo n'a plus qu'à animer.</p>
     <div class="pipeline">
-      <div class="step"><div class="num">ÉTAPE 1</div><h3>Brief</h3><p>Six questions : format, famille, modèle vidéo, durée, paroles, générateur d'images. Des réglages par défaut pour aller vite.</p><span class="tool">Claude</span></div>
-      <div class="step"><div class="num">ÉTAPE 2</div><h3>Concept & script</h3><p>Trois idées au choix, puis un script minuté plan par plan : cadrage, action, expression, son. Légende et hashtags inclus.</p><span class="tool">Claude</span></div>
-      <div class="step"><div class="num">ÉTAPE 3</div><h3>Character sheets</h3><p>Une fiche ADN par personnage, réutilisée mot pour mot partout, et un prompt de planche : 4 vues et 4 expressions.</p><span class="tool">Nano Banana · ChatGPT · Seedream</span></div>
-      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>Une planche de 6 ou 9 cases générée à partir des character sheets. En option, des keyframes HD plan par plan.</p><span class="tool">Générateur d'images + références</span></div>
-      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Le prompt vidéo complet : images étiquetées (@image1…), déroulé minuté, bruitages et répliques. Une génération = toute la vidéo.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
-      <div class="step"><div class="num">ÉTAPE 6</div><h3>Montage & publication</h3><p>Checklist CapCut, musique tendance, légende et hashtags. Puis on garde la famille pour en faire une série.</p><span class="tool">CapCut</span></div>
+      <div class="step"><div class="num">ÉTAPE 1</div><h3>L'idée</h3><p>Claude te propose 6 idées de vidéos prêtes à tourner. Tu en choisis une, ou tu racontes la tienne, même en une phrase.</p><span class="tool">Claude</span></div>
+      <div class="step"><div class="num">ÉTAPE 2</div><h3>Le script</h3><p>Le casting, puis le script minuté plan par plan : cadrage, action, expression, son. Tu peux le faire refaire autant que tu veux.</p><span class="tool">Claude</span></div>
+      <div class="step"><div class="num">ÉTAPE 3</div><h3>Character sheets</h3><p>Un prompt par personnage pour générer sa planche : 4 vues et 4 expressions. Sa description reste identique dans tous les prompts.</p><span class="tool">Nano Banana · ChatGPT · Seedream</span></div>
+      <div class="step"><div class="num">ÉTAPE 4</div><h3>Storyboard</h3><p>Un prompt pour générer la planche de 6 cases, à lancer avec tes images de character sheets en référence.</p><span class="tool">Générateur d'images + character sheets</span></div>
+      <div class="step"><div class="num">ÉTAPE 5</div><h3>Animation</h3><p>Le prompt vidéo complet, à lancer avec les character sheets et le storyboard : déroulé minuté, bruitages, répliques. Une génération = toute la vidéo.</p><span class="tool">MiniMax H3 · Seedance 2.5</span></div>
+      <div class="step bonus"><div class="num">BONUS · FACULTATIF</div><h3>Légende & montage</h3><p>Si tu le demandes : la légende, les hashtags et 3 conseils de montage pour publier ta vidéo.</p><span class="tool">CapCut</span></div>
     </div>
   </div>
 </section>
@@ -554,7 +555,7 @@ Audio: quiet room tone, soft humming, fabric rustle, tiny toddler snore, DAD's w
     <h2>Questions fréquentes</h2>
     <div class="faq">
       <details><summary>Quel générateur d'images utiliser pour les character sheets ?</summary><p>N'importe lequel qui accepte des images de référence : Nano Banana (Gemini), ChatGPT Images, Seedream (Dreamina/CapCut) ou Hailuo Image. Claude adapte les consignes à ton outil.</p></details>
-      <details><summary>Je peux utiliser mes propres personnages ?</summary><p>Oui. Décris-les au brief (ou envoie une photo d'inspiration) : Claude écrit leur fiche ADN et la réutilise mot pour mot dans tous les prompts. Garde tes character sheets pour faire une série.</p></details>
+      <details><summary>Je peux utiliser mes propres personnages ?</summary><p>Oui. Décris-les dès l'étape 1, ou ajuste le casting proposé avec le script (tu peux aussi envoyer une photo d'inspiration) : Claude écrit leur fiche ADN et la réutilise mot pour mot dans tous les prompts. Garde tes character sheets pour faire une série.</p></details>
       <details><summary>Pourquoi les prompts sont en anglais ?</summary><p>Les modèles d'image et de vidéo suivent mieux les consignes en anglais. Claude te parle en français, et les répliques des personnages restent dans la langue de ton choix.</p></details>
       <details><summary>Ma vidéo ajoute une musique ou du texte que je ne veux pas.</summary><p>Le skill inclut un tableau de dépannage. Pour H3, la dernière ligne <code>non_diegetic_music: N/A</code> coupe la musique ; pour Seedance, « No background music ». Demande à Claude « dépannage » en décrivant le problème.</p></details>
       <details><summary>Ça marche avec une autre IA que Claude ?</summary><p>Le skill est écrit pour Claude. Une autre IA capable de lire un lien peut le suivre, mais le résultat n'est pas garanti.</p></details>
